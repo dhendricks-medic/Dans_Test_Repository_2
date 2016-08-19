@@ -1,0 +1,20 @@
+An Intrinsic Mode Function can be defined as:
+
+A function where:
+1- The number of extrema and zero-crossings differ at most by 1
+2- The mean of the local envelopes defined by its local maxima and by its local minima should be zero at all times.
+
+
+In order to obtain an IMF, the following algorithm is followed:
+
+1- Find all local extrema in the signal.
+2- Join all local maxima with a cubic spline, creating an upper envelope. Join all local minima with a cubic spline, creating a lower envelope
+3- Calculate the mean of the two envelopes
+4- Subtract mean from original signals
+5- Check if an IMF is obtained. If not, then repeat steps 1-4 until an IMF is obtained.
+6- Subtract IMF from signal 
+7- Repeat steps 1-6 until there are no more IMFs.
+
+A library to perform IMFs in python is called PyHHT.
+
+
